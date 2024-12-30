@@ -1,9 +1,11 @@
-const User = require("../models/User")
-const mailSender = require("../utils/mailSender")
+
+const User = require("../models/User");
+const mailSender = require("../utils/mailSender");
 const bcrypt = require("bcrypt");
 
 
-const resetPasswordToken = async(req,res) => {
+//resetPasswordToken
+exports.resetPasswordToken = async (req, res) => {
     try {
         //get email from req body
         const email = req.body.email;
@@ -42,8 +44,14 @@ const resetPasswordToken = async(req,res) => {
             message:'Something went wrong while sending reset pwd mail'
         })
     }
+
+
+
+   
 }
 
+
+//resetPassword\
 
 exports.resetPassword = async (req, res) => {
     try {
